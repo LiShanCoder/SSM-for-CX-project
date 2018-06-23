@@ -14,12 +14,14 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
 
 	<tx:advice id="txAdvice" transaction-manager="transactionManager">
 		<tx:attributes>
+			<tx:method name="trans*" rollback-for="Exception"/>
 			<tx:method name="find*" read-only="true"/>
 			<tx:method name="print*" read-only="true"/>
+			<tx:method name="*" read-only="true"/>
 		</tx:attributes>
 	</tx:advice>
 	<aop:config>
-		<aop:pointcut expression="execution(* demo1.service.*.*(..))" id="pointCut"/>
+		<aop:pointcut expression="execution(* com.company.project.service.impl.*.*(..))" id="pointCut"/>
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="pointCut"/>
 	</aop:config>
 

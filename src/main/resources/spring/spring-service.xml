@@ -6,10 +6,11 @@
 http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-<!-- 	<context:component-scan base-package="demo1.dao" /> -->
+	<context:component-scan base-package="com.company.project.service.impl" />
 
 <!-- service层实例 -->
+<!-- 
 	<context:annotation-config />
-	<bean class="demo1.service.UserService" />
-
+	<bean class="com.company.project.service.impl.AccountServiceImpl" />
+ -->
 </beans>

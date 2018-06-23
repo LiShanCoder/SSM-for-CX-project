@@ -1,4 +1,4 @@
-package cn.li.ssm.controller.converter;
+package com.company.project.controller.converter;
 
 import org.springframework.core.convert.converter.Converter;
 

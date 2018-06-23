@@ -8,22 +8,22 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 
 <!-- 数据源 -->
 	<context:property-placeholder location="classpath:jdbc.properties"/>
-	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
-		<property name="driverClass" 	value="${jdbc.driver}"/>
-		<property name="jdbcUrl" 		value="${jdbc.url}"/>
-		<property name="user" 			value="${jdbc.user}"/>
-		<property name="password" 		value="${jdbc.password}"/>
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" 	value="${jdbc.driver}"/>
+		<property name="url" 				value="${jdbc.url}"/>
+		<property name="username" 			value="${jdbc.user}"/>
+		<property name="password" 			value="${jdbc.password}"/>
 	</bean>
 	
 <!-- SqlsessionFactory -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		<!-- <property name="configLocation" value="classpath:mybatis/SqlMapConfig.xml" />  --> <!-- mybatis配置文件 -->
+		<property name="configLocation" value="classpath:mybatis/SqlMapConfig.xml" /> <!-- mybatis配置文件 -->
 	</bean>
 
 <!-- mapper的扫描器，dao层实例 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.company.project.dao" />								<!-- 配置扫描包的路径（扫描多个包，逗号分隔） -->
+		<property name="basePackage" value="com.company.project.mapper" />								<!-- 配置扫描包的路径（扫描多个包，逗号分隔） -->
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
 	</bean>
 	
