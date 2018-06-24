@@ -12,9 +12,9 @@ import com.company.project.service.impl.MoneyServiceImpl;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations= {
-		"classpath:spring/spring-dao.xml",
-		"classpath:spring/spring-service.xml",
-		"classpath:spring/spring-tx.xml"
+		"classpath:spring/applicationContext-dao.xml",
+		"classpath:spring/applicationContext-service.xml",
+		"classpath:spring/applicationContext-transation.xml"
 		})
 public class MoneyMapperTest {
 
@@ -33,7 +33,7 @@ public class MoneyMapperTest {
 	
 	@Test
 	public void t2() throws Exception {
-		moneyServiceImpl.transMoneyTest("user1", "user2", 2d);
+		moneyServiceImpl.transMoneyTest("user1", "user2", 200d);
 	}
 	
 }

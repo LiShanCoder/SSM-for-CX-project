@@ -12,8 +12,8 @@ import com.company.project.service.AccountService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations= {
-		"classpath:spring/spring-dao.xml",
-		"classpath:spring/spring-service.xml"
+		"classpath:spring/applicationContext-dao.xml",
+		"classpath:spring/applicationContext-service.xml"
 		})
 public class AccountServiceTest {
 

@@ -12,7 +12,7 @@ import com.company.project.po.Account;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations= {
-		"classpath:spring/spring-dao.xml"
+		"classpath:spring/applicationContext-dao.xml"
 		})
 public class AccountMapperTest {
 
