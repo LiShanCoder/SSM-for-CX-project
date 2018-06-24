@@ -5,13 +5,29 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>Insert title here</title>
+	<script src="${pageContext.request.contextPath}/js/jquery-1.4.4.min.js" /></script>
+<script>
+function keyValueRequest(){
+	$.ajax({
+		url:"${pageContext.request.contextPath}/doLogin.do",
+		type:"POST",
+		//contentType:"application/json; charset=utf-8",
+		//keyValue数据格式
+		data:$('#form1').serialize(),
+		success: function(data){
+			$('#JsonMsg').text(data.errMsg);
+		}
+	});
+}
+</script>
 </head>
 
 <body>
-	<form action="http://localhost:8080/project/doLogin.do" method="get" >
+	<form id="form1" action="http://localhost:8080/project/doLogin.do" method="POST" >
 		<input name="username" />	<br>
 		<input name="password" />	<br>
-		<button type="submit">提交</button>	
+		<button type="button" onclick="keyValueRequest()">提交</button>	
 	</form>
+	<span id="JsonMsg"></span>
 </body>
 </html>

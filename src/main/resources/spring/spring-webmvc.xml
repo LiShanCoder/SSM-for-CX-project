@@ -11,11 +11,13 @@
 <!-- 注解适配器 -->
 	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
 		<property name="webBindingInitializer" ref="customBinder"/>		<!-- 自定义参数绑定、校验器 -->
-<!-- 		<property name="messageConverters">								对json的支持
+ 		<property name="messageConverters">								<!-- 对json的支持 -->
 			<list>
-				<bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"/>
+				<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
 			</list>
 		</property> 
+		<!--
+	spring4，配置的类名发生改变，org.springframework.http.converter.json.MappingJackson2HttpMessageConverter	
 NoClassDefFoundError: org/codehaus/jackson/JsonProcessingException
 -->
 	</bean>
@@ -46,8 +48,8 @@ NoClassDefFoundError: org/codehaus/jackson/JsonProcessingException
 		</property>
 	</bean>
 
-<!-- 统一异常处理 --><!-- 
-	<bean class="cn.li.ssm.exception.CustomExceptionResolver"/> -->
+<!-- 统一异常处理 -->
+	<bean class="com.company.project.unified.UnifiedHandlerExceptionResolver"/>
 	
 <!--拦截器 --><!-- 
 	<mvc:interceptors>
