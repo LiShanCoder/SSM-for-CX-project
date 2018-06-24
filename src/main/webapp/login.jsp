@@ -24,8 +24,8 @@ function keyValueRequest(){
 
 <body>
 	<form id="form1" action="http://localhost:8080/project/doLogin.do" method="POST" >
-		<input name="username" />	<br>
-		<input name="password" />	<br>
+		<input name="username" value="admin" />	<br>
+		<input name="password" value="1" />	<br>
 		<button type="button" onclick="keyValueRequest()">提交</button>	
 	</form>
 	<span id="JsonMsg"></span>

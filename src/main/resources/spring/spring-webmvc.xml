@@ -51,12 +51,12 @@ NoClassDefFoundError: org/codehaus/jackson/JsonProcessingException
 <!-- 统一异常处理 -->
 	<bean class="com.company.project.unified.UnifiedHandlerExceptionResolver"/>
 	
-<!--拦截器 --><!-- 
+<!--拦截器 -->
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/**" />
-			<bean class="cn.li.ssm.controller.interceptor.LoginInterceptor"/>
+			<bean class="com.company.project.controller.interceptor.AuthorityInterceptor"/>
 		</mvc:interceptor>
 	</mvc:interceptors>
- -->
+
 </beans>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.company.project.mapper.PowerMapper">
+	<select id="findPowerUrls" parameterType="int" resultType="string">
+		SELECT
+			p.url
+		FROM
+			account a
+		JOIN role4power rp ON a.role_id = rp.role_id
+		JOIN power p ON rp.power_id = p.id
+		WHERE
+			a.id = #{account_id}
+	</select>
+</mapper>
