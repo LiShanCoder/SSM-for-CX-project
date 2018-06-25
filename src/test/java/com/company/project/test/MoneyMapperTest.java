@@ -12,17 +12,17 @@ import com.company.project.service.impl.MoneyServiceImpl;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations= {
-		"classpath:spring/applicationContext-dao.xml",
-		"classpath:spring/applicationContext-service.xml",
-		"classpath:spring/applicationContext-transation.xml"
-		})
+	"classpath:spring/applicationContext-dao.xml",
+	"classpath:spring/applicationContext-service.xml",
+	"classpath:spring/applicationContext-transation.xml"
+})
 public class MoneyMapperTest {
 
 	@Resource
 	private MoneyMapper moneyMapper;
 	
 	@Test
-	public void testDealMoney() {
+	public void dealMoney() {
 		moneyMapper.dealMoney("user1", 100d);
 	}
 	
@@ -32,7 +32,7 @@ public class MoneyMapperTest {
 	private MoneyServiceImpl moneyServiceImpl;
 	
 	@Test
-	public void t2() throws Exception {
+	public void transMoney() throws Exception {
 		moneyServiceImpl.transMoneyTest("user1", "user2", 200d);
 	}
 	
