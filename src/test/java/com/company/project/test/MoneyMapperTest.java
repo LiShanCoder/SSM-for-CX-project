@@ -36,4 +36,5 @@ public class MoneyMapperTest {
 		moneyServiceImpl.transMoneyTest("user1", "user2", 200d);
 	}
 	
+	
 }
